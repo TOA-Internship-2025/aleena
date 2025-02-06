@@ -2,6 +2,7 @@
 from sqlalchemy import Boolean, Column, ForeignKey, Integer, String
 from database.config import Base
 from pydantic import BaseModel
+from typing import Optional
 
 class Cultivator(Base):
     __tablename__='cultivator'
@@ -16,3 +17,9 @@ class CultivatorBase(BaseModel):
     cultivation_lot:str
     crop_type:str
     company_id:int
+
+class UpdateCultivatorBase(BaseModel):
+    cultivator_name:Optional[str]
+    cultivation_lot:Optional[str]
+    crop_type:Optional[str]
+    company_id:Optional[int]
