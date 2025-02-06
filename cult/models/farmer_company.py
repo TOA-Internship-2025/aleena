@@ -2,6 +2,7 @@
 from sqlalchemy import Boolean, Column, ForeignKey, Integer, String
 from database.config import Base
 from pydantic import BaseModel
+from typing import Optional
 
 class FarmerCompany(Base):
     __tablename__='farmer_company'
@@ -15,3 +16,8 @@ class FarmerBase(BaseModel):
     company_name:str
     code:int
     active:bool
+
+class UpdateFarmerBase(BaseModel):
+    company_name: Optional[str]
+    code: Optional[int]
+    active: Optional[bool]
