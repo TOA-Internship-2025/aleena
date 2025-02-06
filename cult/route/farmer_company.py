@@ -1,9 +1,14 @@
 #all routes POST(create) GET(read) PUT(update) DELETE(delete)
+from database.config import db_dependency
+from fastapi import APIRouter
+import database.farmer_company as fc
 
 
+router=APIRouter()
 
-@app.get("/questions/{q_id}")
-async def read_question(q_id:int,db:db_dependency):
-    result=db.query(model.Questions).filter(model.Questions.id==q_id).first()
+@router.get("/")
+async def get_all_farmers(db:db_dependency):
+    result=fc.get_all_farmercompany(db)
     if not result:
-        raise HTTPException()
+        return "Could not retrieve"
+    return result

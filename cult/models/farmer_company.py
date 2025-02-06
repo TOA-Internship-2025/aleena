@@ -1,9 +1,9 @@
 #scheme structure
 from sqlalchemy import Boolean, Column, ForeignKey, Integer, String
-from database.cultivator import Base
+from database.config import Base
 from pydantic import BaseModel
 
-class farmer_company(Base):
+class FarmerCompany(Base):
     __tablename__='farmer_company'
     id=Column(Integer,primary_key=True, index=True)
     company_name=Column(String,index=True)

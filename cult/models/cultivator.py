@@ -1,6 +1,6 @@
 #scheme structure
 from sqlalchemy import Boolean, Column, ForeignKey, Integer, String
-from database.cultivator import Base
+from database.config import Base
 from pydantic import BaseModel
 
 class Cultivator(Base):
