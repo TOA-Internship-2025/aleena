@@ -1,27 +1,24 @@
 import './find.css'
 import React, { useState, useEffect, useRef } from "react";
 
-const DropDown = () => {
+const DropDown = ({data,findid,companyid}) => {
     const [ddtoggled, setddtoggled] = useState(false)
     const [selected, setselected]=useState(null)
-    // const ddRef = useRef(null)
-    // useEffect{()=>{
-    //     if (ddRef.current){
-    //         console.log(ddRef.current)
-    //     }
-    // }}
 
-    const ddoptions = [
-        {
-            id: 1,
-            label: "xyz",
-            value: "xuyuxu"
-        }, {
-            id: 1,
-            label: "abc",
-            value: "xuyuxu"
-        },
-    ];
+    console.log("from dropdown", data)
+
+
+    // const ddoptions = [
+    //     {
+    //         id: 1,
+    //         label: "xyz",
+    //         value: "xuyuxu"
+    //     }, {
+    //         id: 1,
+    //         label: "abc",
+    //         value: "xuyuxu"
+    //     },
+    // ];
 
 
     return (
@@ -29,15 +26,18 @@ const DropDown = () => {
             <button className='toggle' onClick={() => {
                 setddtoggled(!ddtoggled);
             }}>
-                <span>{selected ? selected.label : "Select Company"} </span>
+                <span>{selected ? selected.company_name : "Select Company"} </span>
                 <span>{ddtoggled ? '-' : '+'}</span>
                 </button>
+
             <div className={`ddtextoptions ${ddtoggled ? "visible" : ""}`}>
-                {ddoptions.map((option, index) => {
-                    return <button className='options' onClick={()=>
+                {data.map((option, index) => {
+                    return <button className='options' key={index} onClick={()=>
                     {setselected(option)
                         setddtoggled(false)
-                    }}>{option.label}</button>;
+                        console.log("kitti",option.id)
+                        findid(option.id)
+                    }} value={option.id}>{option.company_name}</button>;
                 })}
             </div>
         </div>

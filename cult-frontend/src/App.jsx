@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import Navbar from './components/navbar/navbar'
 import Title from './components/title/title'
 import Para from './components/para/para'
@@ -8,37 +8,45 @@ import Footer from './components/footer/footer'
 import './App.css'
 
 function App() {
-  //  const [count, setCount] = useState(0)
 
+
+  const [farmer, setCount] = useState(0)
+const [data, setData] = useState([])
+const [id, setId]=useState(null)
+
+
+  async function getfarmercompanies() {
+    const fetched = await fetch("http://127.0.0.1:8000/farmercompany/")
+    const farmercompanies = await fetched.json()
+    console.log(farmercompanies.data[0])
+    const datafetched =farmercompanies.data[0]
+    setData(datafetched)
+  }
+
+  useEffect(() => {
+    getfarmercompanies()
+  },
+    []
+  )
+
+console.log(data)
+console.log(id)
   return (
     <>
-        <div className='bg'>
-          <br></br>
-      <Title />
-      <br></br><br></br>
-      <Navbar />
-      <br></br>
-      <Para/>
-      <br></br>
-      <div className='button'>  <DropDown/></div>
-      <Table/>
-    
-    
-      {/* <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+      <div className='bg'>
+        <br></br>
+        <Title />
+        <br></br><br></br>
+        <Navbar />
+        <br></br>
+        <Para />
+        <br></br>
+        <div className='button'>
+          <DropDown data={data} findid={setId} companyid={id}/>
+        </div>
+        <Table foundid={id} />
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div> */}
-    </div>
-    <Footer/>
+      <Footer />
     </>
   )
 }

@@ -1,8 +1,10 @@
 import React from 'react'
 import './Table.css'
 
-const Table = () => {
+const Table = ({id}) => {
+    console.log(id)
   return (
+    
     <div className='table'>
         <table className='tabledata'>
             <tr>
