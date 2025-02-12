@@ -1,4 +1,3 @@
-
 .box {
     position: sticky;
     /* top:80px; */
@@ -6,19 +5,17 @@
     height: 30px;
     margin: auto;
     width: 80%;
-
+    border-radius: 20px;
     padding: 10px;
 }
-ul{
-    text-align:center
-}
-li {
-    display: inline; 
-    padding: 80px;
-    margin:10px;
+
+.list {
+    display: flex; 
+    align-items: center;
+    justify-content: space-around;
 }
 
-a {
+.list a {
     text-decoration: none;
     color:#FFFFFF;
 }

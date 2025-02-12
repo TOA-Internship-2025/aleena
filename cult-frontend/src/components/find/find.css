@@ -1,0 +1,41 @@
+.dropdown{
+    display: flex;
+    flex-direction: column;
+    width: 40vw;
+    align-self: center;
+    position: relative;
+    
+}
+ .toggle{
+    padding: 20px;
+    display: flex;
+    border-radius: 50px;
+    background-color: #A1C349;
+    justify-content: space-between;
+ }
+.options{
+    background-color: #FEF7FF;
+    width: 90%;
+    padding: 15px;
+    border: none;
+}
+
+.ddtextoptions{
+    visibility: hidden;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: space-between; */
+}
+
+.ddtextoptions.visible{
+    opacity: 1;
+    visibility: visible;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+.options:hover{
+    background-color: rgb(236, 186, 125);
+
+}

@@ -1,7 +1,9 @@
 import { useState } from 'react'
-import SelectButton from './components/find/find'
 import Navbar from './components/navbar/navbar'
 import Title from './components/title/title'
+import Para from './components/para/para'
+import DropDown from './components/find/find'
+import Table from './components/table/Table'
 import Footer from './components/footer/footer'
 import './App.css'
 
@@ -11,12 +13,17 @@ function App() {
   return (
     <>
         <div className='bg'>
+          <br></br>
       <Title />
       <br></br><br></br>
       <Navbar />
       <br></br>
-      <SelectButton />
-      <Footer/>
+      <Para/>
+      <br></br>
+      <div className='button'>  <DropDown/></div>
+      <Table/>
+    
+    
       {/* <a href="https://react.dev" target="_blank">
           <img src={reactLogo} className="logo react" alt="React logo" />
         </a>
@@ -31,6 +38,7 @@ function App() {
         </p>
       </div> */}
     </div>
+    <Footer/>
     </>
   )
 }

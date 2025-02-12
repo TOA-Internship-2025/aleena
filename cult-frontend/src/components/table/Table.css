@@ -1,0 +1,27 @@
+.table{
+    display: flex;
+    justify-content: center;
+}
+
+
+
+.tabledata{
+    border-collapse: collapse;
+    width: 80%;
+
+}
+
+
+.tabledata td, th{
+    border:1px solid #B9B9B9;
+
+}
+
+.tabledata td{
+    padding:10px;
+    background-color: white;
+}
+.tabledata th{
+    padding: 15px;
+    background-color:#F0F0F0 ;
+}

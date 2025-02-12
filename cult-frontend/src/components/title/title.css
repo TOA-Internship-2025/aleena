@@ -1,10 +1,9 @@
 .heading {
-    position: sticky;
+
     background-color: #87A330;
     height: 50px;
     margin: auto;
     width: 20%;
-    top: 20px;
     padding: 10px;
     color: white;
     font-family: "Inknut Antiqua", serif;

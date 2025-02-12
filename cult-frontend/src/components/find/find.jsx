@@ -1,25 +1,46 @@
-function selectbutton() {
-    return <h1></h1>
-}
+import './find.css'
+import React, { useState, useEffect, useRef } from "react";
+
+const DropDown = () => {
+    const [ddtoggled, setddtoggled] = useState(false)
+    const [selected, setselected]=useState(null)
+    // const ddRef = useRef(null)
+    // useEffect{()=>{
+    //     if (ddRef.current){
+    //         console.log(ddRef.current)
+    //     }
+    // }}
+
+    const ddoptions = [
+        {
+            id: 1,
+            label: "xyz",
+            value: "xuyuxu"
+        }, {
+            id: 1,
+            label: "abc",
+            value: "xuyuxu"
+        },
+    ];
 
 
-
-// const MyHobby = ({
-//     hobby
-//   }) =>
-//   <h1>My hobby is {hobby}.</h1>;
-
-// const Introduction = ({
-//     name
-//   }) =>
-//   <h1>My name is {name}.</h1>;
-
-// const App = () => (
-//   <div>
-//     <h1>Hello 👋</h1>
-//     <Introduction name="John Doe" />
-//     <MyHobby hobby="coding" />
-//   </div>
-// );
-
-export default selectbutton;
+    return (
+        <div className='dropdown'>
+            <button className='toggle' onClick={() => {
+                setddtoggled(!ddtoggled);
+            }}>
+                <span>{selected ? selected.label : "Select Company"} </span>
+                <span>{ddtoggled ? '-' : '+'}</span>
+                </button>
+            <div className={`ddtextoptions ${ddtoggled ? "visible" : ""}`}>
+                {ddoptions.map((option, index) => {
+                    return <button className='options' onClick={()=>
+                    {setselected(option)
+                        setddtoggled(false)
+                    }}>{option.label}</button>;
+                })}
+            </div>
+        </div>
+    );
+};
+export default DropDown;

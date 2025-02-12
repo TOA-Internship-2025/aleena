@@ -1,8 +1,13 @@
-
 .bg {
-  background-image: url(
-"./assets/wheat.jpg"
-  );
-  background-size: "cover";
+  height: 100vh;
+  background-image: url("./assets/wheat.jpg");
+  background-size: 100% 100%;
   background-repeat: no-repeat;
+  /* width: 100%; */
+  /* height: auto; */
+}
+
+.button {
+  display: flex;
+  justify-content: center;
 }

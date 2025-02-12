@@ -1,0 +1,11 @@
+.paragraph{
+    position: sticky;
+    /* top:80px; */
+    background-color: #CAD593;
+    /* height: 30px; */
+    margin: auto;
+    width: 65%;
+    border-radius: 10px;
+    padding: 30px;
+
+}
