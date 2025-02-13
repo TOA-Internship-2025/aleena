@@ -3,7 +3,7 @@ import Navbar from './components/navbar/navbar'
 import Title from './components/title/title'
 import Para from './components/para/para'
 import DropDown from './components/find/find'
-import Table from './components/table/Table'
+import Table from './components/table/table'
 import Footer from './components/footer/footer'
 import './App.css'
 
@@ -49,20 +49,22 @@ const [tabledata, setTableData]=useState([])
   return (
     <>
       <div className='bg'>
-        <br></br>
+        
         <Title />
-        <br></br><br></br>
+        
         <Navbar />
-        <br></br>
+        
         <Para />
-        <br></br>
+        
         <div className='button'>
           <DropDown data={data} findid={setId} companyid={id}/>
         </div>
-        <br></br>
-       { <Table tabledata={tabledata} />}
+      
+        <Table tabledata={tabledata} />
+        <Footer />
       </div>
-      <Footer />
+      
+      
     </>
   )
 }

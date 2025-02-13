@@ -2,11 +2,14 @@
     background-color:#CAD593 ;
     display: flex;
     justify-content: center;  
-    gap:15px;
+    gap:50px;
     padding-bottom: 15px;
     font-family: 'Inter';
 font-style: normal;
 font-weight: 400;
+/* bottom: 0; */
+position: absolute;
+width: 100%;
 }
 
 .left{
@@ -20,7 +23,7 @@ font-weight: 400;
 .middle{
     display: flex;
     flex-direction: column; 
-    font-size: ;
+    
     /* padding-right: 20px; */
 }
 
