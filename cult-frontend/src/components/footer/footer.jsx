@@ -1,17 +1,18 @@
 import './footer.css'
-import { SlSocialLinkedin } from "react-icons/sl";
-import { TiSocialYoutube } from "react-icons/ti";
-import { TiSocialTwitter } from "react-icons/ti";
-
+import { BsLinkedin } from "react-icons/bs";
+import { BsYoutube } from "react-icons/bs";
+import { BsTwitterX } from "react-icons/bs";
+import { FaInstagram } from "react-icons/fa6";
 
 const Footer = () => {
     return (
         <footer >
             <div class='footer'>
         <div className='left'>
-            <span><SlSocialLinkedin /></span>
-            <span><TiSocialYoutube /></span>
-            <span><TiSocialTwitter /></span>
+     <span><BsTwitterX /></span>
+<span><FaInstagram /></span>
+            <span><BsYoutube /></span>
+            <span><BsLinkedin /></span>
 
         </div>
         <div className='middle'>

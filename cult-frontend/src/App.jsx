@@ -13,14 +13,25 @@ function App() {
   const [farmer, setCount] = useState(0)
 const [data, setData] = useState([])
 const [id, setId]=useState(null)
-
+const [tabledata, setTableData]=useState([])
 
   async function getfarmercompanies() {
     const fetched = await fetch("http://127.0.0.1:8000/farmercompany/")
     const farmercompanies = await fetched.json()
-    console.log(farmercompanies.data[0])
     const datafetched =farmercompanies.data[0]
     setData(datafetched)
+  }
+  async function getcultivators() {
+    const fetched = await fetch(`http://127.0.0.1:8000/cultivators/farmer/${id}`)
+    const cultivators = await fetched.json()
+    console.log("cultivatorsss",cultivators)
+    try{
+      const datafetched =cultivators.data[0]
+      setTableData(datafetched)
+    }
+    catch{
+      setTableData([])
+    } 
   }
 
   useEffect(() => {
@@ -28,9 +39,13 @@ const [id, setId]=useState(null)
   },
     []
   )
+  useEffect(() => { if(id!=null)
+    getcultivators()
+  },
+    [id]
+  )
 
-console.log(data)
-console.log(id)
+
   return (
     <>
       <div className='bg'>
@@ -44,7 +59,8 @@ console.log(id)
         <div className='button'>
           <DropDown data={data} findid={setId} companyid={id}/>
         </div>
-        <Table foundid={id} />
+        <br></br>
+       { <Table tabledata={tabledata} />}
       </div>
       <Footer />
     </>

@@ -1,5 +1,5 @@
 .bg {
-  height: 100vh;
+  height: 90.5vh;
   background-image: url("./assets/wheat.jpg");
   background-size: 100% 100%;
   background-repeat: no-repeat;
@@ -10,4 +10,8 @@
 .button {
   display: flex;
   justify-content: center;
+}
+
+body{
+  margin: 0;
 }

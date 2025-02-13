@@ -1,6 +1,7 @@
 .table{
     display: flex;
     justify-content: center;
+    
 }
 
 
@@ -8,6 +9,10 @@
 .tabledata{
     border-collapse: collapse;
     width: 80%;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+
 
 }
 
@@ -18,10 +23,12 @@
 }
 
 .tabledata td{
+    font-size: larger;
     padding:10px;
     background-color: white;
 }
 .tabledata th{
     padding: 15px;
+    font-size: larger;
     background-color:#F0F0F0 ;
 }

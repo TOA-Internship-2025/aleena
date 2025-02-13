@@ -3,6 +3,7 @@ const Title = () => {
     return (
         <div class='heading'>
             CULT
+            
         </div>
     )
 }
